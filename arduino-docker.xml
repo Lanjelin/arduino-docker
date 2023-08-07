@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>arduino-docker</Name>
+  <Repository>ghcr.io/lanjelin/arduino-docker:latest</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>Arduino IDE in Docker&#xD;
+&#xD;
+The new major release of the Arduino IDE is faster and even more powerful! In addition to a more modern editor and a more responsive interface it features autocompletion, code navigation, and even a live debugger.&#xD;
+&#xD;
+This container comes with the following extras preinstalled:&#xD;
+ - Firefox&#xD;
+ - Terminator (because I really can't do xterm)&#xD;
+ - Thunar file manager&#xD;
+&#xD;
+This container requires the CA app user scripts, it uses this to add a script to enable USB-hotswapping.&#xD;
+After first starting the container, head over to user scripts and run the newly added 'arduino-docker-helper'&#xD;
+Set it to run 'At First Array Start Only' to persist USB-hotswap through reboots.&#xD;
+&#xD;
+See the README for more info.&#xD;
+&#xD;
+Built using KasmVNC base image by linuxserver.io&#xD;
+https://github.com/linuxserver/docker-baseimage-kasmvnc</Overview>
+  <Category>HomeAutomation:</Category>
+  <WebUI>http://[IP]:[PORT:3000]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/Lanjelin/arduino-docker/main/arduino-docker.xml</TemplateURL>
+  <Icon>https://github.com/Lanjelin/arduino-docker/raw/main/root/app/arduino-icon-180x180.png</Icon>
+  <ExtraParams>--privileged --device-cgroup-rule='c 188:* rmw' --device-cgroup-rule='c 166:* rmw'</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1691077037</DateInstalled>
+  <DonateText>Donations</DonateText>
+  <DonateLink></DonateLink>
+  <Requires/>
+  <Config Name="WebUI" Target="3000" Default="3000" Mode="tcp" Description="Arduino GUI." Type="Port" Display="always" Required="true" Mask="false">3000</Config>
+  <Config Name="WebUI HTTPS" Target="3001" Default="3001" Mode="tcp" Description="Arduino GUI HTTPS." Type="Port" Display="always" Required="true" Mask="false">3001</Config>
+  <Config Name="GPU Support" Target="" Default="" Mode="" Description="" Type="Device" Display="always" Required="true" Mask="false">/dev/dri:/dev/dri</Config>
+  <Config Name="GPU Device" Target="DRINODE" Default="/dev/dri/renderD128" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">/dev/dri/renderD128</Config>
+  <Config Name="Appdata" Target="/config" Default="/mnt/user/appdata/feather-wallet" Mode="rw" Description="Users home directory in the container, stores local files and settings" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/arduino</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="{3}" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="{3}" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+  <Config Name="UMASK" Target="UMASK" Default="022" Mode="" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">022</Config>
+  <Config Name="user script install path" Target="/userscript" Default="/boot/config/plugins/user.scripts/scripts/arduino-docker-helper" Mode="rw" Description="Needed to install the helper user script" Type="Path" Display="advanced" Required="true" Mask="false">/boot/config/plugins/user.scripts/scripts/arduino-docker-helper</Config>
+</Container>
