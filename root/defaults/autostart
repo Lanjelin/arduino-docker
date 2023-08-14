@@ -1,3 +1,3 @@
 #!/bin/bash
 sudo /bin/bash /defaults/userscript-installer.sh $HOST_CONTAINERNAME
-/app/arduino-ide
+/app/arduino-ide/arduino-ide
