@@ -4,6 +4,6 @@
 <item label="terminator" icon="/usr/share/icons/hicolor/48x48/apps/terminator.png"><action name="Execute"><command>/usr/bin/terminator</command></action></item>
 <item label="thunar" icon="/usr/share/icons/hicolor/48x48/apps/org.xfce.thunar.png"><action name="Execute"><command>/usr/bin/thunar /config</command></action></item>
 <item label="Firefox" icon="/usr/share/icons/hicolor/48x48/apps/firefox.png"><action name="Execute"><command>/usr/bin/firefox</command></action></item>
-<item label="Arduino IDE" icon="/app/arduino-icon-180x180.png"><action name="Execute"><command>/app/arduino-ide/arduino-ide</command></action></item>
+<item label="Arduino IDE" icon="/app/arduino-icon-180x180.png"><action name="Execute"><command>/app/arduino-ide</command></action></item>
 </menu>
 </openbox_menu>
