@@ -18,7 +18,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN }}
         run: |
-          EXT_RELEASE=$(curl --silent "https://api.github.com/repos/arduino/arduino-ide/releases/latest" | grep '"tag_name":' |  sed -E 's/.*"v([^"]+)".*/\1/')
+          EXT_RELEASE=$(curl --silent "https://api.github.com/repos/arduino/arduino-ide/releases/latest" | grep '"tag_name":' |  sed -E 's/.*"([^"]+)".*/\1/')
           if [ -z "${EXT_RELEASE}" ]; then
             echo "**** Can't retrieve external release, exiting ****"
             exit 1
