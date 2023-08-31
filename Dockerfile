@@ -17,8 +17,9 @@ RUN \
     libnss3 \
     libsecret-1-0 && \
   echo "**** download arduino ide ****" && \
-  wget -q https://downloads.arduino.cc/arduino-ide/arduino-ide_${VERSION}_Linux_64bit.zip -O /app/arduino-ide_${VERSION}_Linux_64bit.zip && \
+  wget -q https://github.com/arduino/arduino-ide/releases/download/${VERSION}/arduino-ide_${VERSION}_Linux_64bit.zip -O /app/arduino-ide_${VERSION}_Linux_64bit.zip && \
   unzip /app/arduino-ide_${VERSION}_Linux_64bit.zip -d /app/ && \
+  cp -r /app/arduino-ide_${VERSION}_Linux_64bit/* /app && \
   echo "**** install extras ****" && \
   add-apt-repository ppa:mozillateam/ppa && \
   apt-get update && \
@@ -36,7 +37,8 @@ RUN \
     /tmp/* \
     /var/lib/apt/lists/* \
     /var/tmp/* \
-    /app/arduino-ide_${VERSION}_Linux_64bit.zip
+    /app/arduino-ide_${VERSION}_Linux_64bit.zip \
+    /app/arduino-ide_${VERSION}_Linux_64bit
 
 # ports and volumes
 EXPOSE 3000 3001

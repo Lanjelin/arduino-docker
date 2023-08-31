@@ -37,7 +37,7 @@ jobs:
             echo "**** PR for Version ${EXT_RELEASE} open, exiting ****"
             exit 0
           fi
-          if wget -q --method=HEAD https://downloads.arduino.cc/arduino-ide/arduino-ide_${EXT_RELEASE}_Linux_64bit.zip; then
+          if wget -q --method=HEAD https://github.com/arduino/arduino-ide/releases/download/${EXT_RELEASE}/arduino-ide_${EXT_RELEASE}_Linux_64bit.zip; then
             echo "**** New version ${EXT_RELEASE} found; old version was ${IMAGE_VERSION}. Triggering new PR ****"
             sed -i "s/VERSION=${IMAGE_VERSION}/VERSION=${EXT_RELEASE}/g" Dockerfile
             echo "makepr=true" >> "$GITHUB_OUTPUT"
