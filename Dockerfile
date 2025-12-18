@@ -3,7 +3,7 @@ FROM ghcr.io/linuxserver/baseimage-kasmvnc:ubuntujammy
 LABEL maintainer="lanjelin"
 
 ENV TITLE="Arduino IDE"
-ENV VERSION=2.3.6
+ENV VERSION=2.3.7
 
 COPY /root /
 
